@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtFirstName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
 
     override func viewDidLoad() {
@@ -18,8 +19,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showOutput(sender: AnyObject) {
-        lblOutput.text = "Hello " + txtName.text
+        if(txtFirstName == nil && txtLastName == nil)
+        {
+            lblOutput.text = "Hello World!"
+        }
+        else
+        {
+            lblOutput.text = "Hello " + txtFirstName.text + txtLastName.text
         //lblOutput.text = "Hello \(txtName.text)"
+        }
+    }
+    
+    @IBAction func showOutput2(sender: AnyObject) {
+        
+        lblOutput.text = "Hello World!"
     }
     
     @IBAction func backgroundTap(sender: AnyObject){
