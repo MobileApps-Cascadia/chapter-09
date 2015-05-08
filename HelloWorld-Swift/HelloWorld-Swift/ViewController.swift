@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showOutput(sender: AnyObject) {
-        if(txtFirstName == nil && txtLastName == nil)
+        if(txtFirstName == "" && txtLastName == "")
         {
             lblOutput.text = "Hello World!"
         }
@@ -32,9 +32,14 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func showOutput2(sender: AnyObject) {
+    @IBAction func changeOutput(sender: AnyObject) {
         
         lblOutput.text = "Hello World!"
+    }
+    
+    @IBAction func clearOutput(sender: AnyObject) {
+        
+        lblOutput.text = ""
     }
     
     @IBAction func backgroundTap(sender: AnyObject){
