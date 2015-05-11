@@ -5,12 +5,15 @@
 //  Created by Brian Bansenauer on 5/3/15.
 //  Copyright (c) 2015 Cascadia College. All rights reserved.
 //
+// Add comments just to make a change to the file.
+// Add another comment to make a change to the file.
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtFirstName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
 
     override func viewDidLoad() {
@@ -18,8 +21,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showOutput(sender: AnyObject) {
-        lblOutput.text = "Hello " + txtName.text
+        if(txtFirstName == "" && txtLastName == "")
+        {
+            lblOutput.text = "Hello World!"
+        }
+        else
+        {
+            lblOutput.text = "Hello " + txtFirstName.text + txtLastName.text
         //lblOutput.text = "Hello \(txtName.text)"
+        }
+    }
+    
+    @IBAction func changeOutput(sender: AnyObject) {
+        
+        lblOutput.text = "Hello World!"
+    }
+    
+    @IBAction func clearOutput(sender: AnyObject) {
+        
+        lblOutput.text = ""
     }
     
     @IBAction func backgroundTap(sender: AnyObject){
