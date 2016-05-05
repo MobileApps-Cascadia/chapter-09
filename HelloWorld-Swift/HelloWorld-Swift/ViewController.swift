@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
+    @IBOutlet weak var txtLastName: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,32 @@ class ViewController: UIViewController {
     
     //Say hello on button tap
     @IBAction func showOutput(sender: AnyObject) {
-        lblOutput.text = "Hello " + txtName.text!;
-        //lblOutput.text = "Hello \(txtName.text!).";
+        
+        let firstName=txtName.text!
+        let lastName=txtLastName.text!
+        
+        // If both first and last are empty, print Hello World!
+        if firstName.isEmpty && lastName.isEmpty
+        {
+            lblOutput.text = "Hello World!"
+        }
+        
+        // If either first or last, or both, have data, print
+        // Hello <name>!
+        else
+        {
+            lblOutput.text = "Hello " + firstName + " " + lastName + "!";
+        }
+        
     }
+    
+    @IBAction func Clear(sender: AnyObject) {
+        
+        // Clear the first and last name        
+        txtName.text = "";
+        txtLastName.text = "";
+    }
+    
     
     //Hide the on-screen keyboard
     @IBAction func backgroundTap(sender: AnyObject){
