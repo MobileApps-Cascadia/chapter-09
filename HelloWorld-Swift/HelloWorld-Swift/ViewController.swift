@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
+    @IBOutlet weak var txtLast: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,16 @@ class ViewController: UIViewController {
     
     //Say hello on button tap
     @IBAction func showOutput(sender: AnyObject) {
-        lblOutput.text = "Hello " + txtName.text!;
-        //lblOutput.text = "Hello \(txtName.text!).";
+        let first = txtName.text
+        let last = txtLast.text
+        
+        if !first!.isEmpty && !last!.isEmpty {
+            lblOutput.text = "Hello \(first!) \(last!)" ;
+            //lblOutput.text = "Hello \(txtName.text!).";
+        }
+        else {
+            lblOutput.text = "Howdy"
+        }
     }
     
     //Hide the on-screen keyboard
@@ -32,7 +41,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func sayHello(sender: AnyObject) {
+        lblOutput.text = "Hallo Welt"
+    }
 }
 
