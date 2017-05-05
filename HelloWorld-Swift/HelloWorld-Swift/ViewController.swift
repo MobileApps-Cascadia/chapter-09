@@ -12,19 +12,40 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblOutput: UILabel!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var clearBtn: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     //Say hello on button tap
-    @IBAction func showOutput(sender: AnyObject) {
-        lblOutput.text = "Hello " + txtName.text!;
-        //lblOutput.text = "Hello \(txtName.text!).";
+    @IBAction func showOutput(_ sender: AnyObject){
+    
+    if txtName.text == "" && lastName.text == ""
+    {
+        lblOutput.text = "Hello World!"
+    
+    }
+    else
+    
+    {
+        lblOutput.text = "Hello " + txtName.text! + " " + lastName.text!;
+    }
+    
+    }
+    
+    //clear//
+    @IBAction func clearBtn(sender: AnyObject)
+    {
+        lblOutput.text = ""
+        txtName.text=""
+        lastName.text=""
     }
     
     //Hide the on-screen keyboard
-    @IBAction func backgroundTap(sender: AnyObject){
+    func backgroundTap(_ sender: AnyObject){
         self.view.endEditing(true);
     }
 
