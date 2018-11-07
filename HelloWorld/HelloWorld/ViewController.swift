@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     // Get a reference to the Text Field, Label
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var txtLastName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,13 @@ class ViewController: UIViewController {
     @IBAction func showOutput(_ sender: UIButton) {
         // grab the text from the text field
         // and write it into the label
-        lblName.text = txtName.text
+        if(txtLastName.text == nil || txtName.text == nil){
+            lblName.text = "Hello World!"
+        }
+        else{
+            lblName.text = txtName.text! + " " + txtLastName.text!
+
+        }
     }
     
 }
