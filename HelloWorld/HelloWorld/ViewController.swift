@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     // Get a reference to the Text Field, Label
-    @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var txtFirst: UITextField!
+    @IBOutlet weak var txtLast: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,25 @@ class ViewController: UIViewController {
     @IBAction func showOutput(_ sender: UIButton) {
         // grab the text from the text field
         // and write it into the label
-        lblName.text = txtName.text
+        if (txtFirst.text == "" && txtLast.text == "") {
+            lblName.text = "Hello World";
+        }
+        if (txtFirst.text == "" && txtLast.text != "") {
+            lblName.text = "Hello " + txtLast.text!;
+        }
+        if (txtFirst.text != "" && txtLast.text == "") {
+            lblName.text = "Hello " + txtFirst.text!;
+        }
+        else {
+            lblName.text = "Hello " + txtFirst.text! + " " + txtLast.text!;
+        }
+        
+    }
+    
+    // event handler for clear form button
+    @IBAction func clearForm(_ sender: UIButton) {
+        txtFirst.text = "";
+        txtLast.text = "";
     }
     
 }
