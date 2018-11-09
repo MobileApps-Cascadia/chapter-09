@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBAction func showOutput(_ sender: UIButton) {
         // grab the text from the text field
         // and write it into the label
-        if(txtLastName.text == nil || txtName.text == nil){
+        if(txtLastName.text == "" && txtName.text == ""){
             lblName.text = "Hello World!"
         }
         else{
@@ -30,5 +30,8 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func changeOutput(_ sender: Any) {
+        lblName.text = "Hello World"
+    }
 }
 
