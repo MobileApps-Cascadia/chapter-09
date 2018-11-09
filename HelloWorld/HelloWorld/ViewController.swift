@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             lblName.text = "Hello " + txtFirst.text!;
         }
         if (txtFirst.text == "" && txtLast.text == ""){
-            lblName.text = "Please Enter Your Name";
+            lblName.text = "Hello World!";
         }
         else {
             lblName.text = "Hello " + txtFirst.text! + " " + txtLast.text!;
