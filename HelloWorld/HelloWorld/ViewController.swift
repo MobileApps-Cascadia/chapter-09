@@ -42,12 +42,14 @@ class ViewController: UIViewController {
     @IBAction func clearButton(_ sender: UIButton) {
         
         var emptyMSG: String
-        emptyMSG = "ther is nothing to clear"
+        emptyMSG = "nothing to clear"
         
-        if txtName.text == txtName.text && txtLastName.text == txtLastName.text{
-            lblName.text = ""
-        }else if(lblName.text == ""){
+        
+        if(lblName.text == ""){
             lblName.text = emptyMSG
+        }
+        else if txtName.text == txtName.text && txtLastName.text == txtLastName.text{
+            lblName.text = ""
         }
         
     }
